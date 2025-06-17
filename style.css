@@ -1,0 +1,64 @@
+body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: none;
+      overflow: hidden;
+      font-family: 'OradanoGSRR', sans-serif;
+    }
+
+@font-face {
+  font-family: 'OradanoGSRR';
+  src: url('./fonts/OradanoGSRR.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+    /* 元画像 */
+    .main-image {
+      width: 700px;
+      height: auto;
+      display: block;
+    }
+
+    /* 虫眼鏡 */
+    .magnifier {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+
+    .magnifier img {
+      position: absolute;
+      transform: scale(1.5); /* 拡大倍率 */
+      transform-origin: top left;
+    }
+
+    @media (max-width: 768px) {
+  body {
+    cursor: default; /* スマホではカーソル非表示を無効化 */
+  }
+
+  .magnifier {
+    width: 200px;
+    height: 200px;
+  }
+ .main-image {
+      width: 300px;
+      height: auto;
+      display: block;
+    }
+
+  .magnifier img {
+    width: 300px;
+    height: auto;
+    transform: scale(2); /* スマホ用に倍率調整 */
+  }
+}
